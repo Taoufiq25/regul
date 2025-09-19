@@ -4,6 +4,7 @@ function results = analyze_all_transitions(ref_signal_name,respo_signal_name,Mod
 
     if nargin == 3
         fprintf('Simulation run\n');
+        run('systems_characteristics.m');
         out = sim(Model_name);
         ref  = out.logsout.getElement(ref_signal_name).Values;
         sig  = out.logsout.getElement(respo_signal_name).Values;
